@@ -1,0 +1,82 @@
+.Regist{
+    max-width: 100%;
+    margin: 0px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .form{
+        margin-top: 4%;
+        margin-left: 200px;
+        .title{
+            color: #333333;
+            font-size: 32px;
+            font-weight: 500;
+        }
+        .item{
+            margin-top: 30px;
+            label{
+                display: block;
+                color: #333333;
+                font-size: 16px;
+            }
+            input{
+                width: 100%;
+                padding: 13px 10px;
+                font-size: 19px;
+                border: 1px solid #d5d5d5;
+                background-color: #dbdbdb;
+                border-radius: 10px;
+                outline: none;
+                margin-top: 5px;
+            }
+        }
+        .login{
+            background-color: #2B2B2B;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 18px;
+            width: 100%;
+            padding: 10px 0px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        p{
+            color: #333333;
+            text-align: center;
+            margin-top: 15px;
+            .link{
+                text-decoration: none;
+                color: #6358DC;
+            }
+        }
+    }
+    .error{
+        color: red;
+        font-size: 18px;
+        text-align: center;
+        border: 2px solid red;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media(min-width: 1200px){
+    .img{
+        width: 850px;
+        object-fit: cover;
+    }
+    .Login{
+        max-width: 90%;
+    }
+}
+
+@media(min-width: 800px){
+    .img{
+        width: 550px;
+        object-fit: cover;
+    }
+    .Login{
+        max-width: 90%;
+    }
+}

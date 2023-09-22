@@ -1,0 +1,50 @@
+.profile {
+ width: 100%;
+ background-color: #fff;
+ margin: 30px auto;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+ &__img {
+  margin: 0 auto;
+  text-align: center;
+ }
+
+ &__banner {
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+ }
+
+ &__logo {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  border-radius: 200px;
+  margin: 0 auto;
+  margin-top: -65px;
+  border: 3px solid #fff;
+ }
+
+ &__idAccount {
+  margin-top: 0px;
+ }
+
+ &__sections {
+  margin: 0px auto;
+  padding: 20px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+}
+.sections__item{
+ margin: 0px 30px;
+ text-align: center;
+ h3{
+  font-size: 20px;
+ }
+ p{
+  font-size: 16px;
+ }
+}

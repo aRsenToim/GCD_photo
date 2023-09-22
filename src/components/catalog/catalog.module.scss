@@ -1,0 +1,10 @@
+.Catalog{
+ &__title{
+  margin: 10px 0px;
+ }
+ &__cards{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+ }
+}
