@@ -1,4 +1,4 @@
-#Analogue of pinterest to react, typescript, redux-toolkit, json-server
+# Analogue of pinterest to react, typescript, redux-toolkit, json-server
 STACK:
 React
 Redux toolkit
