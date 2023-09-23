@@ -1,4 +1,46 @@
 {
-  "photos": [],
-  "users": []
+  "photos": [
+    {
+      "id": 83627941465,
+      "img": "https://sun9-8.userapi.com/impg/dJNnzxwNHzP9TYgUAxoIJzb2c8vZv1W0-S-9LA/h774vfeLbaU.jpg?size=735x842&quality=95&sign=21446806d924ab122d92689368a576a7&type=album",
+      "name": "Крош",
+      "description": "Test",
+      "likes": [],
+      "autor": {
+        "id": "iddpiahk40pmi",
+        "email": "arsen@gmail.com",
+        "nickname": "arsenka11",
+        "photos": [],
+        "likes": [],
+        "img": "https://sun9-8.userapi.com/impg/dJNnzxwNHzP9TYgUAxoIJzb2c8vZv1W0-S-9LA/h774vfeLbaU.jpg?size=735x842&quality=95&sign=21446806d924ab122d92689368a576a7&type=album"
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "arsen@gmail.com",
+      "password": "$2a$10$pjn4McHRBvB0yWl8vFdOuep95evc9rqYG96b.ceSe924Ajx4rwr1u",
+      "id": "iddpiahk40pmi",
+      "nickname": "arsenka11",
+      "photos": [
+        {
+          "id": 83627941465,
+          "img": "https://sun9-8.userapi.com/impg/dJNnzxwNHzP9TYgUAxoIJzb2c8vZv1W0-S-9LA/h774vfeLbaU.jpg?size=735x842&quality=95&sign=21446806d924ab122d92689368a576a7&type=album",
+          "name": "Крош",
+          "description": "Test",
+          "likes": [],
+          "autor": {
+            "id": "iddpiahk40pmi",
+            "email": "arsen@gmail.com",
+            "nickname": "arsenka11",
+            "photos": [],
+            "likes": [],
+            "img": "https://sun9-8.userapi.com/impg/dJNnzxwNHzP9TYgUAxoIJzb2c8vZv1W0-S-9LA/h774vfeLbaU.jpg?size=735x842&quality=95&sign=21446806d924ab122d92689368a576a7&type=album"
+          }
+        }
+      ],
+      "likes": [],
+      "img": "https://sun9-8.userapi.com/impg/dJNnzxwNHzP9TYgUAxoIJzb2c8vZv1W0-S-9LA/h774vfeLbaU.jpg?size=735x842&quality=95&sign=21446806d924ab122d92689368a576a7&type=album"
+    }
+  ]
 }
