@@ -2,7 +2,7 @@ import { IProfile } from '../../types/profileType'
 
 export const localStorageProfileApi = {
  key: "profileGCD",
- setProfile(profile: IProfile) {
+ setProfile(profile: IProfile | null) {
   localStorage.setItem(this.key, JSON.stringify(profile))
  },
  getProfile(): IProfile | null {

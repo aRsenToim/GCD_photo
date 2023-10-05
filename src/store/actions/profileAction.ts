@@ -55,3 +55,11 @@ export const addPhotoProfile = (photo: IPhoto, id: string, profile: IProfile) =>
   })
  }
 }
+
+
+export const logoutProfileFetch = () => {
+ return async (dispatch: Dispatch<any>) => {
+  localStorageProfileApi.setProfile(null)
+  dispatch(setProfile(null))
+ }
+}

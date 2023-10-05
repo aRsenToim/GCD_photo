@@ -1,0 +1,64 @@
+.PhotoCard {
+ width: 800px;
+ background-color: #fff;
+ border-radius: 20px;
+ height: 500px;
+ display: flex;
+ align-self: flex-start;
+ margin: 0px auto;
+ position: relative;
+ &__image{
+  border-radius: 20px;
+  height: 100%;
+ }
+
+ &__info {
+  padding: 20px;
+ }
+
+ &__header{
+  position: absolute;
+  right: 0px;
+ }
+ &__delete{
+  border: none;
+  cursor: pointer;
+  img{
+   width: 45px;
+   height: 45px;
+   object-fit: cover;
+  }
+ }
+
+ &__title {
+  font-weight: 600;
+  font-size: 26px;
+ }
+
+ &__desc {
+  color: #8a8a8a;
+  margin: 10px 0px;
+ }
+
+ &__profile {
+  display: flex;
+  align-items: center;
+
+  img {
+   width: 50px;
+   height: 50px;
+   object-fit: cover;
+   border-radius: 200px;
+   cursor: pointer;
+  }
+  .profile__info{
+   margin-left: 10px;
+   h4{
+
+   }
+   p{
+    color: #9a9a9a;
+   } 
+  }
+ }
+}

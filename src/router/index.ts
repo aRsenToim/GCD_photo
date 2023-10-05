@@ -5,6 +5,7 @@ import Profile from "../pages/profile"
 import Login from "../pages/login"
 import Regist from "../pages/regist"
 import Create from "../pages/create"
+import Settings from "../pages/settings"
 
 
 export interface IRoute {
@@ -19,7 +20,8 @@ enum routes {
  Profile = '/profile/:id',
  Login = '/login',
  Regist = '/regist',
- Create = '/create'
+ Create = '/create',
+ Settings = '/settings'
 }
 
 export const routesApp: IRoute[] = [
@@ -52,5 +54,10 @@ export const routesApp: IRoute[] = [
   path: routes.Regist,
   element: Regist,
   title: "regist"
+ },
+ {
+  path: routes.Settings,
+  element: Settings,
+  title: "settings"
  }
 ]

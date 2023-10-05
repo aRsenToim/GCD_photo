@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { FC, useEffect, useState } from 'react'
 import Header from '../header/header'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
-import { setProfileFetch } from '../../store/actions/profileAction'
+import { logoutProfileFetch, setProfileFetch } from '../../store/actions/profileAction'
 
 const Layout: FC = () => {
  const dispatch = useAppDispatch()
@@ -14,7 +14,7 @@ const Layout: FC = () => {
   setIsFetch(true);
  }, [isFetch])
  return <div className={s.Layout}>
-  <Header profile={profile} />
+  <Header profile={profile} logout={() => {dispatch(logoutProfileFetch())}} />
   <Outlet />
  </div>
 }

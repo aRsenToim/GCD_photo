@@ -6,11 +6,13 @@ import { IPhoto } from "../../types/photosType";
 interface IInitialState {
  profile: IProfile | null
  error: string | null
+ isLikedPhoto: boolean
 }
 
 const initialState: IInitialState = {
  profile: null,
- error: null
+ error: null,
+ isLikedPhoto: false
 }
 
 const profileSlice = createSlice({
