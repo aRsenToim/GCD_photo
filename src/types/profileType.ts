@@ -6,7 +6,12 @@ export interface IProfile{
  email: string
  nickname: string
  photos: IPhoto[]
- likes: IPhoto[]
+ likes: ILikesPhoto[]
+ img: string
+}
+
+export interface ILikesPhoto {
+ id: number
  img: string
 }
 
@@ -39,5 +44,9 @@ export interface ILoginProfile{
  }
 }
 export interface IAddPhotoProfileResponse {
+ data: {}
+}
+
+export interface ILikeProfileResponse {
  data: {}
 }

@@ -6,7 +6,7 @@ export interface IPhoto {
  autor: IProfile
  name: string
  description: string 
- likes: IProfile[]
+ likes: string[]
 }
 
 export interface IGetPhotosResponse {
@@ -16,5 +16,9 @@ export interface IGetPhotoResponse {
  data: IPhoto
 }
 export interface IAddPhotoProfileResponse{
+ data: {}
+}
+
+export interface ILikehotoResponse{
  data: {}
 }

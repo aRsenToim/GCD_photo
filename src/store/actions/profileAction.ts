@@ -1,14 +1,13 @@
 import { Dispatch } from "react"
 import { profileApi } from "../../api/servies/profileApi"
-import { ILogin, ILoginProfile, IProfile, IRegist, IRegistProfile } from "../../types/profileType"
-import { addPhoto, setProfile } from "../slices/profileSlice"
+import { ILikesPhoto, ILogin, ILoginProfile, IProfile, IRegist, IRegistProfile } from "../../types/profileType"
+import { addLikeProfilePhoto, addPhoto, setProfile, unLikePhotoProfileState } from "../slices/profileSlice"
 import { AxiosError } from "axios"
-import { setError } from "../slices/photosSlice"
+import { addLikePhoto, setError } from "../slices/photosSlice"
 import { localStorageProfileApi } from "../../api/servies/localStorageApi"
 import { photosApi } from "../../api/servies/photosApi"
 import { IAddPhotoProfileResponse, IPhoto } from "../../types/photosType"
 import { getPhotosFetch } from "./photosAction"
-
 
 
 export const registProfileFetch = (user: IRegist) => {
@@ -61,5 +60,41 @@ export const logoutProfileFetch = () => {
  return async (dispatch: Dispatch<any>) => {
   localStorageProfileApi.setProfile(null)
   dispatch(setProfile(null))
+ }
+}
+
+
+export const addLikePhotoProfile = (photo: ILikesPhoto, likes: ILikesPhoto[]) => {
+ return async (dispatch: Dispatch<any>) => {
+  const profile = localStorageProfileApi.getProfile()
+  profileApi.likePhoto(profile?.id ?? '', likes).then(() => {
+   dispatch(addLikeProfilePhoto(photo))
+   localStorageProfileApi.setProfile({
+    id: profile?.id ?? '',
+    email: profile?.email ?? '',
+    nickname: profile?.nickname ?? '',
+    photos: profile?.photos ?? [],
+    likes: likes,
+    img: profile?.img ?? '',
+   })
+  })
+ }
+}
+
+
+export const unLikePhotoProfile = (photo: ILikesPhoto, likes: ILikesPhoto[]) => {
+ return async (dispatch: Dispatch<any>) => {
+  const profile = localStorageProfileApi.getProfile()
+  profileApi.likePhoto(profile?.id ?? '', likes).then(() => {
+   dispatch(unLikePhotoProfileState(photo))
+   localStorageProfileApi.setProfile({
+    id: profile?.id ?? '',
+    email: profile?.email ?? '',
+    nickname: profile?.nickname ?? '',
+    photos: profile?.photos ?? [],
+    likes: likes,
+    img: profile?.img ?? '',
+   })
+  })
  }
 }

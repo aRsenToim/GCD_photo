@@ -8,10 +8,14 @@ interface IProps {
  avatarAutor: string
  nameAutor: string
  descAutor: number
+ likes: string[]
+ addLike: () => void
+ unLike: () => void
+ isLiked: boolean,
 }
 
 
-const PhotoCard: FC<IProps> = ({ name, desc, image, avatarAutor, nameAutor, descAutor }) => {
+const PhotoCard: FC<IProps> = ({ name, desc, image, avatarAutor, nameAutor, descAutor, likes, addLike, unLike, isLiked }) => {
  return <div className={s.PhotoCard}>
   <div className={s.PhotoCard__header}>
    <button className={s.PhotoCard__delete}>
@@ -30,10 +34,13 @@ const PhotoCard: FC<IProps> = ({ name, desc, image, avatarAutor, nameAutor, desc
     </div>
    </div>
    <div className={s.PhotoCard__panel}>
-    <button>
-     123
+    {isLiked ? <button onClick={() => { unLike() }}>
+     {likes.length} unLike
      <img src="/img/love.svg" alt="" />
-    </button>
+    </button> : <button onClick={() => { addLike() }}>
+     {likes.length} like
+     <img src="/img/love.svg" alt="" />
+    </button>}
    </div>
   </div>
  </div>

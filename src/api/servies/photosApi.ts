@@ -1,4 +1,5 @@
-import { IGetPhotosResponse, IGetPhotoResponse, IPhoto, IAddPhotoProfileResponse } from '../../types/photosType'
+import { IGetPhotosResponse, IGetPhotoResponse, IPhoto, IAddPhotoProfileResponse, ILikehotoResponse } from '../../types/photosType'
+import { IProfile } from '../../types/profileType'
 import { $api } from '../api'
 
 export const photosApi = {
@@ -10,8 +11,12 @@ export const photosApi = {
   const data = await $api.get(`/photos/${id}`)
   return data
  },
- async addPhoto(photo: IPhoto): Promise<IAddPhotoProfileResponse>{
+ async addPhoto(photo: IPhoto): Promise<IAddPhotoProfileResponse> {
   const data = await $api.post('/photos', photo)
+  return data
+ },
+ async likePhoto(id: number, likes: string[]): Promise<ILikehotoResponse> {
+  const data = await $api.patch(`/photos/${id}`, {likes})
   return data
  }
 }

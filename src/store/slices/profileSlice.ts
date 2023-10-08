@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IProfile } from "../../types/profileType";
+import { ILikesPhoto, IProfile } from "../../types/profileType";
 import { IPhoto } from "../../types/photosType";
 
 
@@ -24,9 +24,15 @@ const profileSlice = createSlice({
   },
   addPhoto(state, action: PayloadAction<IPhoto>){
    state.profile?.photos.push(action.payload)
+  },
+  addLikeProfilePhoto(state, action: PayloadAction<ILikesPhoto>){
+   state.profile?.likes.push(action.payload)
+  },
+  unLikePhotoProfileState(state, action: PayloadAction<ILikesPhoto>){
+   state.profile?.likes.splice(state.profile.likes.indexOf(action.payload), 1)
   }
  }
 })
 
 export default profileSlice.reducer
-export const {setProfile, addPhoto} = profileSlice.actions
+export const {setProfile, addPhoto, addLikeProfilePhoto, unLikePhotoProfileState} = profileSlice.actions
