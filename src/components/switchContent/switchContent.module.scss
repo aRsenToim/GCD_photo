@@ -1,0 +1,21 @@
+.SwitchContent{
+ &__button{
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #346297;
+  font-weight: 600;
+ }
+ &__buttonActive{
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 600;
+  margin: 0px 10px;
+ }
+}

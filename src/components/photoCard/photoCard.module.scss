@@ -1,5 +1,5 @@
 .PhotoCard {
- width: 800px;
+ width: 1000px;
  background-color: #fff;
  border-radius: 20px;
  height: 500px;
@@ -10,6 +10,8 @@
  &__image{
   border-radius: 20px;
   height: 100%;
+  width: 600px;
+  object-fit: cover;
  }
 
  &__info {
@@ -43,7 +45,7 @@
  &__profile {
   display: flex;
   align-items: center;
-
+  margin-bottom: 10px;
   img {
    width: 50px;
    height: 50px;

@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import photosSlice from "./slices/photosSlice";
 import profileSlice from "./slices/profileSlice";
+import pageSlice from "./slices/pageSlice";
+import usersSlice from "./slices/usersSlice";
 
 
 const store = configureStore({
  reducer: {
-  photosSlice: photosSlice,
-  profileSlice: profileSlice
+  photosSlice,
+  profileSlice,
+  pageSlice,
+  usersSlice,
  }
 })
 

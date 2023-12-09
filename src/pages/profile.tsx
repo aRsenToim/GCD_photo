@@ -1,33 +1,47 @@
 import { Navigate, useParams } from "react-router-dom"
-import { useAppSelector } from "../store/hooks"
-import {FC, useEffect, useState} from 'react'
-import { IProfile } from "../types/profileType"
+import { useAppDispatch, useAppSelector } from "../store/hooks"
+import { FC, useEffect, useState } from 'react'
+import { ILikesPhoto, IProfile } from "../types/profileType"
 import ProfileHeader from "../components/profileHeader/profileHeader"
 import ProfileInfo from "../components/profileInfo/profileInfo"
 import Catalog from "../components/catalog/catalog"
+import SwitchContent from "../components/switchContent/switchContent"
+import { setIsMode } from "../store/slices/pageSlice"
+import { IPhoto } from "../types/photosType"
+import { getUserFetch } from "../store/actions/profileAction"
 
 const Profile: FC = () => {
- const [isUser, setIsUser] = useState<IProfile | null>(null)
- const profile = useAppSelector(state => state.profileSlice.profile)
- const { id } = useParams()
+  const profile = useAppSelector(state => state.profileSlice.profile)
+  const [isMode, setIsMode] = useState<string>('')
+  const dispatch = useAppDispatch()
+  const [content, setIsContent] = useState<ILikesPhoto[] | null>(null)
 
- useEffect(() => {
-  if (id == profile?.id) {
-   setIsUser(profile)
-  }else {
-  }
- }, [])
 
- return <>
-  {!profile ? <Navigate to='/login' /> : <div style={{
-    width: '1000px',
-    margin: "0px auto"
-  }}>
-   <ProfileHeader id={profile.id}/>
-   <ProfileInfo id={profile.id} nickname={profile.nickname} img={profile.img} likes={profile.likes.length} photos={profile.photos.length}/>
-   <Catalog photos={profile.photos} title={`Пины ${profile.nickname}`}/>
- </div>}
- </>
+  useEffect(() => {
+    if (isMode == 'Likes') {
+      setIsContent(profile?.likes ?? [])
+      return
+    }
+    setIsContent(profile?.photos ?? [])
+  })
+
+  return <>
+    {!profile ? undefined : <div style={{
+      width: '1000px',
+      margin: "0px auto"
+    }}>
+      <ProfileHeader id={profile.id ?? ''} />
+      <ProfileInfo id={profile.id ?? ''} nickname={profile.nickname} img={profile.img} likes={profile.likes.length} photos={profile.photos.length} />
+      {profile.id == profile?.id ? <SwitchContent arg={{
+        title: "My publications",
+        callback: () => { setIsMode('') }
+      }} endArg={{
+        title: "Likes",
+        callback: () => { setIsMode('Likes') }
+      }} /> : undefined}
+      <Catalog photos={content} title={`Пины ${profile.nickname}`} />
+    </div>}
+  </>
 }
 
 export default Profile

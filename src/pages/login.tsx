@@ -8,7 +8,7 @@ const Login = () => {
  const profile = useAppSelector(state => state.profileSlice.profile)
  const dispatch = useAppDispatch()
  if (profile) {
-  return <Navigate to={`/profile/${profile.id}`} />
+  return <Navigate to={`/profile`} />
  }
  const SumbmitLogin = (email: string, password: string) => {
   dispatch(loginProfileFetch({email, password}))

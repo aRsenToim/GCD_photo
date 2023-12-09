@@ -1,6 +1,6 @@
 import { Dispatch } from "react"
 import { profileApi } from "../../api/servies/profileApi"
-import { ILikesPhoto, ILogin, ILoginProfile, IProfile, IRegist, IRegistProfile } from "../../types/profileType"
+import { IGetProfileResponse, ILikesPhoto, ILogin, ILoginProfile, IProfile, IRegist, IRegistProfile } from "../../types/profileType"
 import { addLikeProfilePhoto, addPhoto, setProfile, unLikePhotoProfileState } from "../slices/profileSlice"
 import { AxiosError } from "axios"
 import { addLikePhoto, setError } from "../slices/photosSlice"
@@ -8,6 +8,7 @@ import { localStorageProfileApi } from "../../api/servies/localStorageApi"
 import { photosApi } from "../../api/servies/photosApi"
 import { IAddPhotoProfileResponse, IPhoto } from "../../types/photosType"
 import { getPhotosFetch } from "./photosAction"
+import { setUser, setErrorUser } from "../slices/usersSlice"
 
 
 export const registProfileFetch = (user: IRegist) => {
@@ -37,18 +38,17 @@ export const loginProfileFetch = (user: ILogin) => {
  }
 }
 
-export const addPhotoFetch = (photo: IPhoto, id: string, profile: IProfile) => {
+export const addPhotoFetch = (photo: IPhoto) => {
  return async (dispatch: Dispatch<any>) => {
-  photosApi.addPhoto(photo).then((data: IAddPhotoProfileResponse) => {
+  photosApi.addPhoto(photo).then(() => {
    dispatch(getPhotosFetch())
-   dispatch(addPhotoProfile(photo, id, profile))
   })
  }
 }
 
-export const addPhotoProfile = (photo: IPhoto, id: string, profile: IProfile) => {
- return async (dispatch: Dispatch<any>) => {
-  profileApi.addPhoto(id, [...profile.photos, photo]).then((data: IAddPhotoProfileResponse) => {
+export const addPhotoProfile = (photo: ILikesPhoto, id: string, profile: IProfile) => {
+ return async (dispatch: Dispatch<any>) => {  
+  profileApi.addPhoto(id, [...profile.photos, photo]).then(() => {
    dispatch(addPhoto(photo))
    localStorageProfileApi.setProfile({ ...profile, photos: [...profile.photos, photo] })
   })
@@ -96,5 +96,15 @@ export const unLikePhotoProfile = (photo: ILikesPhoto, likes: ILikesPhoto[]) => 
     img: profile?.img ?? '',
    })
   })
+ }
+}
+
+
+export const getUserFetch = (id: string) => {
+ return async (dispatch: Dispatch<any>) => {
+  profileApi.getProfile(id).then((data: IGetProfileResponse) => {
+   dispatch(setUser(data.data[0]))
+   
+  }).catch((error: Error | AxiosError) => dispatch(setErrorUser(error.message)))
  }
 }

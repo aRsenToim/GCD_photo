@@ -1,4 +1,65 @@
 {
-  "photos": [],
-  "users": []
+  "photos": [
+    {
+      "id": 61499622616,
+      "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg",
+      "name": "дерьмо",
+      "description": "дерьмо",
+      "likes": [
+        "idf7k94iods03"
+      ],
+      "autor": {
+        "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg",
+        "nickname": "ssshhhiiittt!",
+        "id": "iddkc79aie50h"
+      }
+    },
+    {
+      "id": 33782236369,
+      "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
+      "name": "test",
+      "description": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
+      "likes": [],
+      "autor": {
+        "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
+        "nickname": "сяоми",
+        "id": "idf7k94iods03"
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "arsen@arsen.com",
+      "password": "$2a$10$KoLTcKLyxH.5PEgQgLXo4uns1Snw9c0JjIg6KnAvAyqFCXLf52Xby",
+      "id": "iddkc79aie50h",
+      "nickname": "ssshhhiiittt!",
+      "photos": [
+        {
+          "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg",
+          "id": 61499622616
+        }
+      ],
+      "likes": [],
+      "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg"
+    },
+    {
+      "email": "test@twes.twes",
+      "password": "$2a$10$5RPksMTyHcL9iIjyABWkQuhQMqS4rrHbImMaCf8WCahutKHEB0Vc.",
+      "id": "idf7k94iods03",
+      "nickname": "сяоми",
+      "photos": [
+        {
+          "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
+          "id": 33782236369
+        }
+      ],
+      "likes": [
+        {
+          "id": 61499622616,
+          "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg"
+        }
+      ],
+      "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg"
+    }
+  ]
 }

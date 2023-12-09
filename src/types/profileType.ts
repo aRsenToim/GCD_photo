@@ -1,14 +1,14 @@
-import { IPhoto } from "./photosType"
 
 
 export interface IProfile{
  id: string
  email: string
  nickname: string
- photos: IPhoto[]
+ photos: ILikesPhoto[]
  likes: ILikesPhoto[]
  img: string
 }
+
 
 export interface ILikesPhoto {
  id: number
@@ -20,8 +20,8 @@ export interface IRegist{
  password: string
  email: string
  nickname: string
- photos: IPhoto[]
- likes: IPhoto[]
+ photos: ILikesPhoto[]
+ likes: ILikesPhoto[]
  img: string
 }
 
@@ -49,4 +49,7 @@ export interface IAddPhotoProfileResponse {
 
 export interface ILikeProfileResponse {
  data: {}
+}
+export interface IGetProfileResponse {
+ data: IProfile[]
 }

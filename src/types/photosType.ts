@@ -3,10 +3,16 @@ import { IProfile } from "./profileType"
 export interface IPhoto {
  id: number
  img: string
- autor: IProfile
+ autor: IPhotoAutor
  name: string
  description: string 
  likes: string[]
+}
+
+export interface IPhotoAutor {
+ img: string
+ nickname: string
+ id: string
 }
 
 export interface IGetPhotosResponse {

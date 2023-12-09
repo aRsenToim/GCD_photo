@@ -6,6 +6,7 @@ import Login from "../pages/login"
 import Regist from "../pages/regist"
 import Create from "../pages/create"
 import Settings from "../pages/settings"
+import UserPage from "../pages/user"
 
 
 export interface IRoute {
@@ -17,11 +18,12 @@ export interface IRoute {
 enum routes {
  Home = '/',
  Photo = '/photo/:id',
- Profile = '/profile/:id',
+ Profile = '/profile',
  Login = '/login',
  Regist = '/regist',
  Create = '/create',
- Settings = '/settings'
+ Settings = '/settings',
+ UserPage = '/user/:id'
 }
 
 export const routesApp: IRoute[] = [
@@ -59,5 +61,10 @@ export const routesApp: IRoute[] = [
   path: routes.Settings,
   element: Settings,
   title: "settings"
+ },
+ {
+  path: routes.UserPage,
+  element: UserPage,
+  title: "UserPage"
  }
 ]

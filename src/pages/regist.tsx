@@ -20,7 +20,7 @@ const Regist = () => {
   }))
  } 
  if (profile) {
-  return <Navigate to={`/profile/${profile.id}`} />
+  return <Navigate to={`/profile`} />
  }
 
  return <RegistCompoenent sumbmitRegist={SumbmitRegist} />

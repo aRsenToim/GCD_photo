@@ -18,7 +18,7 @@ const Header: FC<IProps> = ({ profile, logout }) => {
    <NavLink to={'/create'} className={s.Header__button}>Создать</NavLink>
    <input type="text" className={s.Header__search} placeholder='Search' />
   </div>
-  {!profile ? <NavLink className={s.Header__link} to={'/login'}>Войти</NavLink> : <Menu logout={logout} image={profile.img} id={profile.id}/>}
+  {!profile ? <NavLink className={s.Header__link} to={'/login'}>Войти</NavLink> : <Menu logout={logout} image={profile.img}/>}
  </header>
 }
 

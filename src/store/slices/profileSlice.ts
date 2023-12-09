@@ -12,7 +12,7 @@ interface IInitialState {
 const initialState: IInitialState = {
  profile: null,
  error: null,
- isLikedPhoto: false
+ isLikedPhoto: false,
 }
 
 const profileSlice = createSlice({
@@ -22,7 +22,7 @@ const profileSlice = createSlice({
   setProfile(state, action: PayloadAction<IProfile | null>){
    state.profile = action.payload
   },
-  addPhoto(state, action: PayloadAction<IPhoto>){
+  addPhoto(state, action: PayloadAction<ILikesPhoto>){
    state.profile?.photos.push(action.payload)
   },
   addLikeProfilePhoto(state, action: PayloadAction<ILikesPhoto>){

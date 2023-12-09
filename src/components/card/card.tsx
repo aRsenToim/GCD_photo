@@ -4,13 +4,14 @@ import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
 interface IProps {
- photo: IPhoto
+ id: number
+ img: string
 }
 
-const Card: FC<IProps> = ({ photo }) => {
+const Card: FC<IProps> = ({ id, img }) => {
  return <div className={s.Card}>
-  <NavLink to={`/photo/${photo.id}`}>
-   <img src={photo.img} alt="" className={s.Card__image} />
+  <NavLink to={`/photo/${id}`}>
+   <img src={img} alt="" className={s.Card__image} />
   </NavLink>
  </div>
 }
