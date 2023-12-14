@@ -5,6 +5,7 @@ import { IProfile } from '../../types/profileType'
 
 interface IInitialState {
  photos: IPhoto[] | null
+ photosSearch: IPhoto[] | null
  error: string | null
  photo: IPhoto | null
 }
@@ -12,7 +13,8 @@ interface IInitialState {
 const initialState: IInitialState = {
  photos: null,
  error: null,
- photo: null
+ photo: null,
+ photosSearch: null
 }
 
 const photosSlice = createSlice({
@@ -34,8 +36,11 @@ const photosSlice = createSlice({
   unLikePhoto(state, action: PayloadAction<string>){
    state.photo?.likes.splice(state.photo.likes.indexOf(action.payload), 1)
   },
+  setPhotosSearch(state, action: PayloadAction<IPhoto[]>){
+   state.photosSearch = action.payload
+  }
  }
 })
 
 export default photosSlice.reducer
-export const {setError, setPhoto, setPhotos, addLikePhoto, unLikePhoto} = photosSlice.actions
+export const {setError, setPhoto, setPhotosSearch, setPhotos, addLikePhoto, unLikePhoto} = photosSlice.actions

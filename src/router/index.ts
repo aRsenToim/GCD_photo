@@ -7,6 +7,7 @@ import Regist from "../pages/regist"
 import Create from "../pages/create"
 import Settings from "../pages/settings"
 import UserPage from "../pages/user"
+import Search from "../pages/search"
 
 
 export interface IRoute {
@@ -23,7 +24,8 @@ enum routes {
  Regist = '/regist',
  Create = '/create',
  Settings = '/settings',
- UserPage = '/user/:id'
+ UserPage = '/user/:id',
+ Search = '/search/:id'
 }
 
 export const routesApp: IRoute[] = [
@@ -31,7 +33,12 @@ export const routesApp: IRoute[] = [
   path: routes.Home,
   element: Home,
   title: "Home"
- }, 
+ },
+ {
+  path: routes.Search,
+  element: Search,
+  title: "Search"
+ },  
  {
   path: routes.Create,
   element: Create,

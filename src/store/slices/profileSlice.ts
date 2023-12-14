@@ -30,9 +30,13 @@ const profileSlice = createSlice({
   },
   unLikePhotoProfileState(state, action: PayloadAction<ILikesPhoto>){
    state.profile?.likes.splice(state.profile.likes.indexOf(action.payload), 1)
+  },
+  deletePhoto(state, action: PayloadAction<ILikesPhoto>){
+   state.profile?.photos.splice(state.profile?.likes.indexOf(action.payload), 1)
+   
   }
  }
 })
 
 export default profileSlice.reducer
-export const {setProfile, addPhoto, addLikeProfilePhoto, unLikePhotoProfileState} = profileSlice.actions
+export const {setProfile, addPhoto, addLikeProfilePhoto, unLikePhotoProfileState, deletePhoto} = profileSlice.actions

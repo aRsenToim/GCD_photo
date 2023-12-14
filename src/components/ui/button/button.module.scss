@@ -1,0 +1,32 @@
+.Button{
+ &__red{
+  padding: 7px;
+  border: 2px solid red;
+  color: red;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s;
+  margin-right: 10px;
+  &:hover{
+   background-color: red;
+   color: #FFF;
+  }
+ }
+ &__green{
+  padding: 7px;
+  border: 2px solid green;
+  color: green;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s;
+  margin-right: 10px;
+  &:hover{
+   background-color: green;
+   color: #FFF;
+  }
+ }
+}

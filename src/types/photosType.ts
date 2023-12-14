@@ -28,3 +28,6 @@ export interface IAddPhotoProfileResponse{
 export interface ILikehotoResponse{
  data: {}
 }
+export interface IDeletePhotoResponse{
+ data: {}
+}

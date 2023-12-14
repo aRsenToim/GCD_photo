@@ -1,9 +1,12 @@
 import { Dispatch } from '@reduxjs/toolkit'
 import { photosApi } from '../../api/servies/photosApi'
-import { IGetPhotoResponse, IGetPhotosResponse } from '../../types/photosType'
-import { addLikePhoto, setError, setPhoto, setPhotos, unLikePhoto } from '../slices/photosSlice'
-import {AxiosError} from 'axios'
-import { IProfile } from '../../types/profileType'
+import { IGetPhotoResponse, IGetPhotosResponse, IPhoto } from '../../types/photosType'
+import { addLikePhoto, setError, setPhoto, setPhotos, setPhotosSearch, unLikePhoto } from '../slices/photosSlice'
+import { AxiosError } from 'axios'
+import { IGetProfileResponse, ILikesPhoto, ILoginProfile, IProfile } from '../../types/profileType'
+import { profileApi } from '../../api/servies/profileApi'
+import { deletePhoto, setProfile } from '../slices/profileSlice'
+import { setUpdateProfileFetch } from './profileAction'
 
 export const getPhotosFetch = () => {
  return async (dispatch: Dispatch<any>) => {
@@ -33,6 +36,28 @@ export const unLikePhotoFetch = (id: number, likes: string[], idProfile: string)
  return async (dispatch: Dispatch<any>) => {
   photosApi.likePhoto(id, likes).then(() => {
    dispatch(unLikePhoto(idProfile))
+  }).catch((err: Error | AxiosError) => dispatch(setError(err.message)))
+ }
+}
+
+export const deletePhotoFetch = (idPhoto: number, idAccount: string, photos: ILikesPhoto[], photo: ILikesPhoto) => {
+ return async (dispatch: Dispatch<any>) => {
+  photosApi.deletePhoto(idPhoto).then(() => {
+   dispatch(getPhotosFetch())
+  })
+  let photosCopy = [...photos]
+  photosCopy.splice(photosCopy.indexOf(photo), 1)
+  profileApi.deletePhoto(photosCopy, idAccount).then(() => {
+   dispatch(deletePhoto(photo))
+   dispatch(setUpdateProfileFetch(idAccount))
+  })
+ }
+}
+
+export const searchPhoto = (search: string) => {
+ return async (dispatch: Dispatch<any>) => {
+  photosApi.searchPhoto(search).then((data: IGetPhotosResponse) => {
+   dispatch(setPhotosSearch(data.data))
   }).catch((err: Error | AxiosError) => dispatch(setError(err.message)))
  }
 }

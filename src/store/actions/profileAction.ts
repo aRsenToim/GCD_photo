@@ -47,7 +47,7 @@ export const addPhotoFetch = (photo: IPhoto) => {
 }
 
 export const addPhotoProfile = (photo: ILikesPhoto, id: string, profile: IProfile) => {
- return async (dispatch: Dispatch<any>) => {  
+ return async (dispatch: Dispatch<any>) => {
   profileApi.addPhoto(id, [...profile.photos, photo]).then(() => {
    dispatch(addPhoto(photo))
    localStorageProfileApi.setProfile({ ...profile, photos: [...profile.photos, photo] })
@@ -104,6 +104,17 @@ export const getUserFetch = (id: string) => {
  return async (dispatch: Dispatch<any>) => {
   profileApi.getProfile(id).then((data: IGetProfileResponse) => {
    dispatch(setUser(data.data[0]))
+
+  }).catch((error: Error | AxiosError) => dispatch(setErrorUser(error.message)))
+ }
+}
+
+
+export const setUpdateProfileFetch = (idAccount: string) => {
+ return async (dispatch: Dispatch<any>) => {
+  profileApi.getProfile(idAccount).then((data: IGetProfileResponse) => {
+   dispatch(setProfile(data.data[0]))
+   localStorageProfileApi.setProfile(data.data[0])
    
   }).catch((error: Error | AxiosError) => dispatch(setErrorUser(error.message)))
  }

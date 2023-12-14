@@ -1,0 +1,31 @@
+.SearchHelp{
+ position: absolute;
+ top: 80px;
+ text-align: center;
+ margin: 0px auto;
+ left: 26.5%;
+ width: 1100px;
+ background-color: #f6f6f6f6;
+ -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+ -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+ box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+ z-index: 2000;
+ 
+ &__navbar{
+
+ }
+ &__item{
+  list-style: none;
+  padding: 10px 0px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover{
+   background-color: #ccc;
+  }
+ }
+ &__link{
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+ }
+}

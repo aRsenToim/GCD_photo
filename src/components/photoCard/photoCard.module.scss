@@ -1,13 +1,13 @@
 .PhotoCard {
- width: 1000px;
- background-color: #fff;
+ width: 1200px;
+ background-color: #e4e4e4;
  border-radius: 20px;
  height: 500px;
  display: flex;
  align-self: flex-start;
  margin: 0px auto;
- position: relative;
- &__image{
+
+ &__image {
   border-radius: 20px;
   height: 100%;
   width: 600px;
@@ -15,17 +15,39 @@
  }
 
  &__info {
+  width: 100%;
   padding: 20px;
+  position: relative;
  }
 
- &__header{
-  position: absolute;
-  right: 0px;
+ &__header {
+  float: right;
  }
- &__delete{
+
+ &__navSettings {
+  position: absolute;
+  border: 1px solid #ccc;
+  right: 20px;
+  li{
+   list-style: none;
+   background-color: #fff;
+   padding: 6px;
+   cursor: pointer;
+  }
+ }
+
+ &__btnSetting{
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 22px;
+ }
+
+ &__delete {
   border: none;
   cursor: pointer;
-  img{
+
+  img {
    width: 45px;
    height: 45px;
    object-fit: cover;
@@ -46,6 +68,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+
   img {
    width: 50px;
    height: 50px;
@@ -53,14 +76,15 @@
    border-radius: 200px;
    cursor: pointer;
   }
-  .profile__info{
-   margin-left: 10px;
-   h4{
 
-   }
-   p{
+  .profile__info {
+   margin-left: 10px;
+
+   h4 {}
+
+   p {
     color: #9a9a9a;
-   } 
+   }
   }
  }
 }

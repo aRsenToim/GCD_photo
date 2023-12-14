@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom'
 import { usePhoto } from '../hooks/usePhoto'
 import PhotoCard from '../components/photoCard/photoCard'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { likePhotoFetch, unLikePhotoFetch } from '../store/actions/photosAction'
+import { deletePhotoFetch, likePhotoFetch, unLikePhotoFetch } from '../store/actions/photosAction'
 import { addLikePhotoProfile, unLikePhotoProfile } from '../store/actions/profileAction'
+import { ILikesPhoto } from '../types/profileType'
+import { setIsFunAlertIsBoolean } from '../store/slices/pageSlice'
 
 const Photo: FC = () => {
   const { id } = useParams()
@@ -21,6 +23,9 @@ const Photo: FC = () => {
 
   return <div>
     {profile !== null ? <PhotoCard
+      deletePhoto={() => {
+        dispatch(deletePhotoFetch(id ? +id : 0, profile.id, profile.photos, {id: photo?.id ?? 0, img: photo?.img ?? ''}))
+      }}
       idUser={profile.id}
       addLike={() => {
         if (profile && photo) {

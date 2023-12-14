@@ -45,7 +45,7 @@
  }
 
  &__search {
-  width: 80%;
+  width: 100%;
   padding: 13px 15px;
   font-size: 15px;
   outline: none;
@@ -57,5 +57,18 @@
  &__link{
   text-decoration: none;
   color: #111111;
+ }
+ &__searchBlock{
+  display: flex;
+  align-items: center;
+  width: 100%; 
+  position: relative;
+ }
+ &__searchBtn{
+  position: absolute;
+  right: 34px;
+  cursor: pointer;
+  border: none;
+  background: none;
  }
 }

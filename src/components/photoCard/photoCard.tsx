@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import s from './photoCard.module.scss'
 import { FC, useEffect, useState } from 'react'
+import { ILikesPhoto } from '../../types/profileType'
 
 interface IProps {
  name: string
@@ -13,30 +14,35 @@ interface IProps {
  addLike: () => void
  unLike: () => void
  isLiked: boolean,
- idUser: string
+ idUser: string,
+ deletePhoto: () => void
 }
 
 
-const PhotoCard: FC<IProps> = ({ name, idUser, desc, image, avatarAutor, nameAutor, idAutor, likes, addLike, unLike, isLiked }) => {
+const PhotoCard: FC<IProps> = ({ name, idUser, desc, image, deletePhoto, avatarAutor, nameAutor, idAutor, likes, addLike, unLike, isLiked }) => {
  const [isUrl, setIsUrl] = useState<string>('')
+ const [isOpenSetting, setIsOpenSetting] = useState<boolean>(false)
+
 
  useEffect(() => {
   if (idAutor == idUser) {
-   console.log(idAutor, idUser);
-   
    setIsUrl('/profile')
-  }else{
+  } else {
    setIsUrl(`/user/${idAutor}`)
   }
  })
  return <div className={s.PhotoCard}>
-  <div className={s.PhotoCard__header}>
-   <button className={s.PhotoCard__delete}>
-
-   </button>
-  </div>
   <img className={s.PhotoCard__image} src={image} alt="" />
   <div className={s.PhotoCard__info}>
+   {idUser == idAutor ? <div className={s.PhotoCard__header}>
+    <button className={s.PhotoCard__btnSetting} onClick={() => { setIsOpenSetting(isOpenSetting ? false : true) }}>...</button>
+    {isOpenSetting ? <ul className={s.PhotoCard__navSettings}>
+     <li onClick={() => {
+      deletePhoto()
+     }}>Удалить</li>
+     <li>Изменить</li>
+    </ul> : undefined}
+   </div> : undefined}
    <h2 className={s.PhotoCard__title}>{name}</h2>
    <p className={s.PhotoCard__desc}>{desc}</p>
    <NavLink to={isUrl} className='navlink'>

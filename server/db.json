@@ -1,65 +1,37 @@
 {
   "photos": [
     {
-      "id": 61499622616,
-      "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg",
-      "name": "дерьмо",
-      "description": "дерьмо",
-      "likes": [
-        "idf7k94iods03"
-      ],
-      "autor": {
-        "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg",
-        "nickname": "ssshhhiiittt!",
-        "id": "iddkc79aie50h"
-      }
-    },
-    {
-      "id": 33782236369,
-      "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
-      "name": "test",
-      "description": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
+      "id": 92668308363,
+      "img": "https://sun9-27.userapi.com/impf/nJrIE1QkWIBTrGPU8qxlXxMpT_u7k3IUQBFcGQ/VAYZE2uljtk.jpg?size=972x2160&quality=95&sign=7fd05a1c84696ae02fbf7ccd33705331&type=album",
+      "name": "ВАНУС",
+      "description": "ВАНУС",
       "likes": [],
       "autor": {
-        "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
-        "nickname": "сяоми",
-        "id": "idf7k94iods03"
+        "img": "https://sun9-26.userapi.com/impf/FqXKgrtQp1aNayW0qt3fGT6tMiP1fB7mmrIPqw/EzMdjZ-lYVE.jpg?size=972x2160&quality=95&sign=dc95ae95eaff690796ed674e16486cfd&type=album",
+        "nickname": "Pomegranate",
+        "id": "idaqn8otd07rp"
       }
     }
   ],
   "users": [
     {
       "email": "arsen@arsen.com",
-      "password": "$2a$10$KoLTcKLyxH.5PEgQgLXo4uns1Snw9c0JjIg6KnAvAyqFCXLf52Xby",
-      "id": "iddkc79aie50h",
-      "nickname": "ssshhhiiittt!",
+      "password": "$2a$10$eL2L7ZwFlyURVtJBNMliw.K5VTn6HSQc3eUeeVRUAvfZhDWgoQ2fq",
+      "id": "idaqn8otd07rp",
+      "nickname": "Pomegranate",
       "photos": [
         {
-          "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg",
-          "id": 61499622616
-        }
-      ],
-      "likes": [],
-      "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg"
-    },
-    {
-      "email": "test@twes.twes",
-      "password": "$2a$10$5RPksMTyHcL9iIjyABWkQuhQMqS4rrHbImMaCf8WCahutKHEB0Vc.",
-      "id": "idf7k94iods03",
-      "nickname": "сяоми",
-      "photos": [
-        {
-          "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg",
-          "id": 33782236369
+          "img": "https://sun9-27.userapi.com/impf/nJrIE1QkWIBTrGPU8qxlXxMpT_u7k3IUQBFcGQ/VAYZE2uljtk.jpg?size=972x2160&quality=95&sign=7fd05a1c84696ae02fbf7ccd33705331&type=album",
+          "id": 92668308363
         }
       ],
       "likes": [
         {
-          "id": 61499622616,
-          "img": "https://i.pinimg.com/564x/63/b1/bc/63b1bcf18dc096c1401472e429d07642.jpg"
+          "id": 5333534979,
+          "img": "https://sun9-48.userapi.com/impg/OURN3FTyG9YTTmkOaeQ1ktGk8qu6pA_li_GmsA/Ps1UVOOSVfA.jpg?size=1217x2160&quality=95&sign=153eac1a99c3d80998646cd12164a4f9&type=album"
         }
       ],
-      "img": "https://i.pinimg.com/564x/ab/3f/fb/ab3ffbc0e4215c895215937288dbe740.jpg"
+      "img": "https://sun9-26.userapi.com/impf/FqXKgrtQp1aNayW0qt3fGT6tMiP1fB7mmrIPqw/EzMdjZ-lYVE.jpg?size=972x2160&quality=95&sign=dc95ae95eaff690796ed674e16486cfd&type=album"
     }
   ]
 }
