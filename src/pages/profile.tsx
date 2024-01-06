@@ -9,6 +9,7 @@ import SwitchContent from "../components/switchContent/switchContent"
 import { setIsMode } from "../store/slices/pageSlice"
 import { IPhoto } from "../types/photosType"
 import { getUserFetch } from "../store/actions/profileAction"
+import { AuthorizedProfile } from "../hoc/authorizedProfile"
 
 const Profile: FC = () => {
   const profile = useAppSelector(state => state.profileSlice.profile)
@@ -25,7 +26,7 @@ const Profile: FC = () => {
     setIsContent(profile?.photos ?? [])
   })
 
-  return <>
+  return <AuthorizedProfile>
     {!profile ? undefined : <div style={{
       width: '1000px',
       margin: "0px auto"
@@ -41,7 +42,7 @@ const Profile: FC = () => {
       }} /> : undefined}
       <Catalog photos={content} title={`Пины ${profile.nickname}`} />
     </div>}
-  </>
+  </AuthorizedProfile>
 }
 
 export default Profile

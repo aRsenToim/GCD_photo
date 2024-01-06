@@ -11,7 +11,7 @@ import { setUpdateProfileFetch } from './profileAction'
 export const getPhotosFetch = () => {
  return async (dispatch: Dispatch<any>) => {
   photosApi.getPhotos().then((data: IGetPhotosResponse) => {
-   dispatch(setPhotos(data.data))
+   dispatch(setPhotos(data.data.reverse()))
   }).catch((err: Error | AxiosError) => dispatch(setError(err.message)))
  }
 }

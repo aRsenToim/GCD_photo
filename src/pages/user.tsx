@@ -5,6 +5,7 @@ import { getUserFetch } from "../store/actions/profileAction"
 import ProfileHeader from "../components/profileHeader/profileHeader"
 import ProfileInfo from "../components/profileInfo/profileInfo"
 import Catalog from "../components/catalog/catalog"
+import { setIsAlertPhoto, setIsImageAlertPhoto, setIsOpenSearch } from "../store/slices/pageSlice"
 
 
 
@@ -13,11 +14,11 @@ const UserPage: FC = () => {
  const { id } = useParams()
  const user = useAppSelector(state => state.usersSlice.user)
 
- 
+
  useEffect(() => {
   if (!user && id) {
    dispatch(getUserFetch(id))
-  }else if(user?.id !== id && id){
+  } else if (user?.id !== id && id) {
    dispatch(getUserFetch(id))
   }
  })
@@ -28,7 +29,10 @@ const UserPage: FC = () => {
   margin: "0px auto"
  }}>
   <ProfileHeader id={user.id ?? ''} />
-  <ProfileInfo id={user.id ?? ''} nickname={user.nickname} img={user.img} likes={user.likes.length} photos={user.photos.length} />
+  <ProfileInfo openPhoto={() => {
+   dispatch(setIsImageAlertPhoto(user.img))
+   dispatch(setIsAlertPhoto())
+  }} id={user.id ?? ''} nickname={user.nickname} img={user.img} likes={user.likes.length} photos={user.photos.length} />
   <Catalog photos={user.photos} title={`Пины ${user.nickname}`} />
  </div> : <>test</>}</>
 }

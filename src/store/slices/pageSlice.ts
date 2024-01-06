@@ -7,6 +7,10 @@ interface IInitialState {
   isOpen: boolean,
   fun: Function | undefined
  },
+ alertPhoto: {
+  img: string
+  isAlert: boolean
+ }
  search: {
   isOpen: boolean
   tips: string[]
@@ -31,6 +35,10 @@ const initialState: IInitialState = {
    "айти"
   ],
   activeTips: []
+ },
+ alertPhoto: {
+  img: '',
+  isAlert: false
  }
 }
 
@@ -58,10 +66,16 @@ const pageSlice = createSlice({
    state.search.activeTips = state.search.tips.filter((item: string) => {
     return item.toLocaleLowerCase().includes(action.payload.toLocaleLowerCase())
    })
+  },
+  setIsAlertPhoto(state){
+   state.alertPhoto.isAlert = state.alertPhoto.isAlert ? false : true 
+  },
+  setIsImageAlertPhoto(state, action: PayloadAction<string>){
+   state.alertPhoto.img = action.payload
   }
  }
 })
 
 
 export default pageSlice.reducer
-export const { setIsMode, getTipsActive, setIsOpenSearch, setIsOpenAlertIsBoolean, setIsFunAlertIsBoolean } = pageSlice.actions
+export const { setIsMode, getTipsActive, setIsOpenSearch, setIsImageAlertPhoto, setIsAlertPhoto, setIsOpenAlertIsBoolean, setIsFunAlertIsBoolean } = pageSlice.actions

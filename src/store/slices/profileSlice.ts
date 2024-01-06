@@ -23,10 +23,10 @@ const profileSlice = createSlice({
    state.profile = action.payload
   },
   addPhoto(state, action: PayloadAction<ILikesPhoto>){
-   state.profile?.photos.push(action.payload)
+   state.profile?.photos.unshift(action.payload)
   },
   addLikeProfilePhoto(state, action: PayloadAction<ILikesPhoto>){
-   state.profile?.likes.push(action.payload)
+   state.profile?.likes.unshift(action.payload)
   },
   unLikePhotoProfileState(state, action: PayloadAction<ILikesPhoto>){
    state.profile?.likes.splice(state.profile.likes.indexOf(action.payload), 1)

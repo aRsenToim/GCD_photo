@@ -50,7 +50,7 @@ export const addPhotoProfile = (photo: ILikesPhoto, id: string, profile: IProfil
  return async (dispatch: Dispatch<any>) => {
   profileApi.addPhoto(id, [...profile.photos, photo]).then(() => {
    dispatch(addPhoto(photo))
-   localStorageProfileApi.setProfile({ ...profile, photos: [...profile.photos, photo] })
+   localStorageProfileApi.setProfile({ ...profile, photos: [photo, ...profile.photos] })
   })
  }
 }

@@ -7,14 +7,15 @@ interface IProps {
  photos: number
  likes: number
  img: string
+ openPhoto?: () => void
 }
 
-const ProfileInfo: FC<IProps> = ({nickname, photos, likes, img, id}) => {
+const ProfileInfo: FC<IProps> = ({nickname, photos, likes, img, id, openPhoto}) => {
  return <div className={s.profile}>
   <div className={s.profile__info}>
    <div className={s.profile__img}>
     <img className={s.profile__banner} src="https://images.wallpaperscraft.ru/image/single/rasteniia_kolosia_nebo_202406_1920x1080.jpg" />
-    <img className={s.profile__logo} src={img} />
+    <img className={s.profile__logo} onClick={openPhoto} src={img} />
     <h1 className={s.profile__idAccount}>{nickname}</h1>
    </div>
    <div className={s.profile__sections}>

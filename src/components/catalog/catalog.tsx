@@ -10,6 +10,7 @@ interface IProps {
 }
 
 const Catalog: FC<IProps> = ({photos, title}) => {
+ 
  return <div className={s.Catalog}>
   <h1 className={s.Catalog__title}>{title}:</h1>
   <div className={s.Catalog__cards}>
