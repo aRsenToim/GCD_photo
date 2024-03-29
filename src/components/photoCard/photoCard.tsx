@@ -1,12 +1,16 @@
 import { NavLink } from 'react-router-dom'
 import s from './photoCard.module.scss'
 import { FC, useEffect, useState } from 'react'
-import { ILikesPhoto } from '../../types/profileType'
+import Comments from '../comments/comments'
+import { IComment } from '../../types/photosType'
+import Button from '../ui/button/button'
+import AddComment from '../addComment/addComment'
 
 interface IProps {
  name: string
  desc: string
  idAutor: string
+ comments: IComment[]
  image: string
  avatarAutor: string
  nameAutor: string
@@ -15,11 +19,15 @@ interface IProps {
  unLike: () => void
  isLiked: boolean,
  idUser: string,
+ profileAvatar: string,
  deletePhoto: () => void
+ addComment: () => void
+ commentInput: string
+ setCommentInput: (value: string) => void
 }
 
 
-const PhotoCard: FC<IProps> = ({ name, idUser, desc, image, deletePhoto, avatarAutor, nameAutor, idAutor, likes, addLike, unLike, isLiked }) => {
+const PhotoCard: FC<IProps> = ({ name, addComment, profileAvatar, commentInput, setCommentInput, comments, idUser, desc, image, deletePhoto, avatarAutor, nameAutor, idAutor, likes, addLike, unLike, isLiked }) => {
  const [isUrl, setIsUrl] = useState<string>('')
  const [isOpenSetting, setIsOpenSetting] = useState<boolean>(false)
 
@@ -32,7 +40,9 @@ const PhotoCard: FC<IProps> = ({ name, idUser, desc, image, deletePhoto, avatarA
   }
  })
  return <div className={s.PhotoCard}>
-  <img className={s.PhotoCard__image} src={image} alt="" />
+  <NavLink to={image}>
+   <img className={s.PhotoCard__image} src={image} alt="" />
+  </NavLink>
   <div className={s.PhotoCard__info}>
    {idUser == idAutor ? <div className={s.PhotoCard__header}>
     <button className={s.PhotoCard__btnSetting} onClick={() => { setIsOpenSetting(isOpenSetting ? false : true) }}>...</button>
@@ -63,6 +73,8 @@ const PhotoCard: FC<IProps> = ({ name, idUser, desc, image, deletePhoto, avatarA
      <img src="/img/love.svg" alt="" />
     </button>}
    </div>
+   <AddComment setCommentInput={setCommentInput} commentInput={commentInput} addComment={addComment} img={profileAvatar} />
+   <Comments comments={comments} />
   </div>
  </div>
 }

@@ -1,0 +1,21 @@
+.Window{
+ position: absolute;
+ bottom: 0px;
+ padding: 20px;
+ border: 1px solid green;
+ width: 97.5%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color: rgb(165, 245, 165);
+ &__text{
+  color: green;
+ }
+ &__button{
+  border: none;
+  background: none;
+  color: green;
+  font-size: 22px;
+  cursor: pointer;
+ }
+}

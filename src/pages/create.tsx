@@ -26,7 +26,8 @@ const Create = () => {
      img: profile.img,
      nickname: profile.nickname,
      id: profile.id
-    }
+    },
+    comments: []
    }))
    dispatch(addPhotoProfile({
     img,

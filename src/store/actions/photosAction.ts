@@ -1,6 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit'
 import { photosApi } from '../../api/servies/photosApi'
-import { IGetPhotoResponse, IGetPhotosResponse, IPhoto } from '../../types/photosType'
+import { IComment, IGetPhotoResponse, IGetPhotosResponse, IPhoto } from '../../types/photosType'
 import { addLikePhoto, setError, setPhoto, setPhotos, setPhotosSearch, unLikePhoto } from '../slices/photosSlice'
 import { AxiosError } from 'axios'
 import { IGetProfileResponse, ILikesPhoto, ILoginProfile, IProfile } from '../../types/profileType'
@@ -20,6 +20,14 @@ export const getPhotoFetch = (id: string) => {
  return async (dispatch: Dispatch<any>) => {
   photosApi.getPhoto(id).then((data: IGetPhotoResponse) => {
    dispatch(setPhoto(data.data))
+  }).catch((err: Error | AxiosError) => dispatch(setError(err.message)))
+ }
+}
+
+export const addCommentFetch = (id: number, comments: IComment[]) => {
+ return async (dispatch: Dispatch<any>) => {
+  photosApi.addComment(id, comments).then((data) => {
+   dispatch(getPhotoFetch(`${id}`))
   }).catch((err: Error | AxiosError) => dispatch(setError(err.message)))
  }
 }

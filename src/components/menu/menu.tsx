@@ -17,6 +17,9 @@ const Menu: FC<IProps> = ({ image, logout }) => {
     <NavLink to={`/profile`}><img src={image} className={s.Menu__profile} alt="" /></NavLink>
    </li>
    <li className={s.Menu__item}>
+    <NavLink className={s.Menu__text} to={`/users`}>Пользователи</NavLink>
+   </li>
+   <li className={s.Menu__item}>
     <NavLink className={s.Menu__text} to={`/settings`}>Настройки</NavLink>
    </li>
    <li className={s.Menu__item} onClick={() => {logout()}}>

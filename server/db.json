@@ -1,67 +1,46 @@
 {
   "photos": [
     {
-      "id": 33545634734,
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ug8ZaPulAPsPhZ5M3d5rPG9TZtxPW0qaslaX7Ts&s",
-      "name": "выф",
-      "description": "фывфыв",
+      "id": 92205612165,
+      "img": "https://i.pinimg.com/736x/28/6f/fa/286ffa67e7703e594e8c89d625f12b37.jpg",
+      "name": "Я справляюсь с агрессией",
+      "description": "С помощью самоувечья ",
       "likes": [],
       "autor": {
-        "img": "https://lastfm.freetls.fastly.net/i/u/ar0/7bc4c79dc971e1f5669fd0cd63dc6aa1.jpg",
-        "nickname": "Pomegranate",
-        "id": "idq9nql76ha5p"
-      }
-    },
-    {
-      "id": 58815641693,
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ug8ZaPulAPsPhZ5M3d5rPG9TZtxPW0qaslaX7Ts&s",
-      "name": "test",
-      "description": "teste",
-      "likes": [],
-      "autor": {
-        "img": "https://i1.sndcdn.com/avatars-90Lmwd1dTwOTPeDu-XZKuWw-t240x240.jpg",
-        "nickname": "QwErTy",
-        "id": "idh9fqo6c8n5a"
-      }
+        "img": "https://i.pinimg.com/564x/86/0b/eb/860beb5d69ff35373a9fd0d8c9cf2a63.jpg",
+        "nickname": "qwerty",
+        "id": "id5qctbmala7t"
+      },
+      "comments": [
+        {
+          "idComment": "idje9a0t92914",
+          "idPhoto": 92205612165,
+          "autor": {
+            "img": "https://i.pinimg.com/564x/86/0b/eb/860beb5d69ff35373a9fd0d8c9cf2a63.jpg",
+            "nickname": "qwerty",
+            "id": "id5qctbmala7t"
+          },
+          "content": "Морально-физическим извращением "
+        }
+      ]
     }
   ],
   "users": [
     {
-      "email": "arsen@arsen.arsen",
-      "password": "$2a$10$66pkzrW3yZiSIArQXNALj.lpcoP569vM5r76qt9TmOu8xcOKeSIWi",
-      "id": "idq9nql76ha5p",
-      "nickname": "Pomegranate",
-      "photos": [
-        {
-          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ug8ZaPulAPsPhZ5M3d5rPG9TZtxPW0qaslaX7Ts&s",
-          "id": 33545634734
-        }
-      ],
-      "likes": [],
-      "img": "https://lastfm.freetls.fastly.net/i/u/ar0/7bc4c79dc971e1f5669fd0cd63dc6aa1.jpg"
-    },
-    {
       "email": "qwerty@qwerty.com",
-      "password": "$2a$10$YCKO44bep7wh0rPrr2xpFO7pcUc20luFZ02qv14dFJn/UcGKPvUde",
-      "id": "idh9fqo6c8n5a",
-      "nickname": "QwErTy",
+      "password": "$2a$10$ii2ZvGI7ELNWMMNUObLz8OYQ760JcLsImXg/WIsA9I8LtTkeWvFeO",
+      "dateAuth": "2024-03-27T19:39:01.685Z",
+      "id": "id5qctbmala7t",
+      "status": "Я справляюсь с агрессией",
+      "nickname": "qwerty",
       "photos": [
         {
-          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ug8ZaPulAPsPhZ5M3d5rPG9TZtxPW0qaslaX7Ts&s",
-          "id": 58815641693
+          "img": "https://i.pinimg.com/736x/28/6f/fa/286ffa67e7703e594e8c89d625f12b37.jpg",
+          "id": 92205612165
         }
       ],
       "likes": [],
-      "img": "https://i1.sndcdn.com/avatars-90Lmwd1dTwOTPeDu-XZKuWw-t240x240.jpg"
-    },
-    {
-      "email": "TSTE@RESR.COM",
-      "password": "$2a$10$SIKpn606t2qamunivmeoxuk.qDG4HHXI37TCyf0sd78IXvUu5sHuy",
-      "id": "id8klrisbt2pf",
-      "nickname": "STESET",
-      "photos": [],
-      "likes": [],
-      "img": "STESET"
+      "img": "https://i.pinimg.com/564x/86/0b/eb/860beb5d69ff35373a9fd0d8c9cf2a63.jpg"
     }
   ]
 }

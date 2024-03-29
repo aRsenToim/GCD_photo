@@ -4,9 +4,11 @@ export interface IProfile{
  id: string
  email: string
  nickname: string
+ status: string
  photos: ILikesPhoto[]
  likes: ILikesPhoto[]
  img: string
+ dateAuth: Date
 }
 
 
@@ -16,8 +18,10 @@ export interface ILikesPhoto {
 }
 
 export interface IRegist{
+ dateAuth: Date
  id: string
  password: string
+ status: string
  email: string
  nickname: string
  photos: ILikesPhoto[]

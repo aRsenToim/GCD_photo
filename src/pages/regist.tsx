@@ -10,8 +10,10 @@ const Regist = () => {
  const profile = useAppSelector(state => state.profileSlice.profile)
  const SumbmitRegist = (password: string, email: string, nickname: string, img: string) => {
   dispatch(registProfileFetch({
+   dateAuth: new Date,
    id: generatorId(),
    password,
+   status: 'status',
    email,
    nickname,
    photos: [],

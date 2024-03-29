@@ -1,5 +1,12 @@
 import { IProfile } from "./profileType"
 
+export interface IComment {
+ idComment: string
+ idPhoto: number
+ autor: IPhotoAutor
+ content: string
+}
+
 export interface IPhoto {
  id: number
  img: string
@@ -7,6 +14,7 @@ export interface IPhoto {
  name: string
  description: string 
  likes: string[]
+ comments: IComment[]
 }
 
 export interface IPhotoAutor {

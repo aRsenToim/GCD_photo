@@ -33,9 +33,9 @@ const Header: FC<IProps> = ({ profile, logout, isOpenSearch, setIsOpenSearch, ge
      }
     }} className={s.Header__search} placeholder='Search' />
     <button className={s.Header__searchBtn}>
-     <NavLink to={`/search/${search}`}>
+     {search ? <NavLink to={`/search/${search}`}>
       <img src="/img/search.svg" alt="" />
-     </NavLink>
+     </NavLink> : <img src="/img/search.svg" alt="" />}
     </button>
    </div>
   </div>

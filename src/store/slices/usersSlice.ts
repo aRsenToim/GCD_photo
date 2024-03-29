@@ -3,12 +3,14 @@ import { IProfile } from "../../types/profileType";
 
 interface IinitialState {
  user: IProfile | null
+ users: IProfile[] | null
  error: string | null
 }
 
 const initialState: IinitialState = {
  user: null,
- error: null
+ error: null,
+ users: null
 }
 
 const usersSlice = createSlice({
@@ -21,8 +23,11 @@ const usersSlice = createSlice({
   setUser(state, action: PayloadAction<IProfile>){
    state.user = action.payload
   },
+  setUsers(state, action: PayloadAction<IProfile[]>){
+   state.users = action.payload
+  }
  }
 })
 
-export const {setErrorUser, setUser} = usersSlice.actions
+export const {setErrorUser, setUser, setUsers} = usersSlice.actions
 export default usersSlice.reducer

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IRegistProfile, IRegist, IGetProfileResponse, ILoginProfile, ILogin, IAddPhotoProfileResponse, ILikeProfileResponse, ILikesPhoto } from '../../types/profileType'
+import { IRegistProfile, IRegist, IGetProfileResponse, ILoginProfile, ILogin, IAddPhotoProfileResponse, ILikeProfileResponse, ILikesPhoto, IProfile } from '../../types/profileType'
 import { IDeletePhotoResponse } from '../../types/photosType'
 import { IPhoto } from '../../types/photosType'
 import { $api } from '../api'
@@ -26,7 +26,15 @@ export const profileApi = {
   return data
  },
  deletePhoto(photos: ILikesPhoto[], id: string): Promise<IDeletePhotoResponse> {
-  const data = $api.patch(`/users/${id}`, { photos})
+  const data = $api.patch(`/users/${id}`, { photos })
+  return data
+ },
+ async getUsers() {
+  const data = await $api.get<IProfile[]>('/users')
+  return data.data
+ },
+ async setStatus(status: string, id: string) {
+  const data = $api.patch(`/users/${id}`, { status })
   return data
  }
 }

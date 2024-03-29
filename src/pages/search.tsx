@@ -17,7 +17,7 @@ const Search: FC = () => {
    dispatch(searchPhoto(id))
   }
  }, [id])
- 
+  
  return <div>
   <Catalog title={`Результат поиска ${id}`} photos={photosSearch}/>
  </div>

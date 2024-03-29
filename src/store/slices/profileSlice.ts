@@ -33,7 +33,6 @@ const profileSlice = createSlice({
   },
   deletePhoto(state, action: PayloadAction<ILikesPhoto>){
    state.profile?.photos.splice(state.profile?.likes.indexOf(action.payload), 1)
-   
   }
  }
 })

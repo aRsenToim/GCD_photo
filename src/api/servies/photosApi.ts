@@ -1,4 +1,4 @@
-import { IGetPhotosResponse, IGetPhotoResponse, IDeletePhotoResponse, IPhoto, IAddPhotoProfileResponse, ILikehotoResponse } from '../../types/photosType'
+import { IGetPhotosResponse, IComment, IGetPhotoResponse, IDeletePhotoResponse, IPhoto, IAddPhotoProfileResponse, ILikehotoResponse } from '../../types/photosType'
 import { IProfile } from '../../types/profileType'
 import { $api } from '../api'
 
@@ -23,8 +23,12 @@ export const photosApi = {
   const data = await $api.delete(`/photos/${id}`)
   return data
  },
- async searchPhoto(search: string): Promise<IGetPhotosResponse>{
+ async searchPhoto(search: string): Promise<IGetPhotosResponse> {
   const data = await $api.get(`photos?name_like=${search}`)
   return data
+ },
+ async addComment(id: number, comments: IComment[]) {
+  const data = await $api.patch(`/photos/${id}`, { comments })
+  return data.data
  }
 }

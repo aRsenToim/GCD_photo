@@ -15,6 +15,10 @@ interface IInitialState {
   isOpen: boolean
   tips: string[]
   activeTips: string[]
+ },
+ window: {
+  isWindow: boolean,
+  title: string,
  }
 }
 const initialState: IInitialState = {
@@ -39,6 +43,10 @@ const initialState: IInitialState = {
  alertPhoto: {
   img: '',
   isAlert: false
+ },
+ window: {
+  isWindow: false,
+  title: ''
  }
 }
 
@@ -67,15 +75,21 @@ const pageSlice = createSlice({
     return item.toLocaleLowerCase().includes(action.payload.toLocaleLowerCase())
    })
   },
-  setIsAlertPhoto(state){
-   state.alertPhoto.isAlert = state.alertPhoto.isAlert ? false : true 
+  setIsAlertPhoto(state) {
+   state.alertPhoto.isAlert = state.alertPhoto.isAlert ? false : true
   },
-  setIsImageAlertPhoto(state, action: PayloadAction<string>){
+  setIsImageAlertPhoto(state, action: PayloadAction<string>) {
    state.alertPhoto.img = action.payload
+  },
+  setIsWindow(state, action: PayloadAction<boolean>) {
+   state.window.isWindow = action.payload
+  },
+  setWindowTitle(state, action: PayloadAction<string>){
+   state.window.title = action.payload
   }
  }
 })
 
 
 export default pageSlice.reducer
-export const { setIsMode, getTipsActive, setIsOpenSearch, setIsImageAlertPhoto, setIsAlertPhoto, setIsOpenAlertIsBoolean, setIsFunAlertIsBoolean } = pageSlice.actions
+export const { setIsMode, setIsWindow, setWindowTitle, getTipsActive, setIsOpenSearch, setIsImageAlertPhoto, setIsAlertPhoto, setIsOpenAlertIsBoolean, setIsFunAlertIsBoolean } = pageSlice.actions

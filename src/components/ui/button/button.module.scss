@@ -29,4 +29,28 @@
    color: #FFF;
   }
  }
+ &__blue{
+  padding: 7px;
+  border: 2px solid #02437d;
+  background-color: #02437d;
+  color: #fff;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.5s;
+  margin-left: 10px;
+ }
+ &__default{
+  padding: 7px;
+  border: 2px solid #ccc;
+  background-color: #ccc;
+  color: #fff;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.5s;
+  margin-left: 10px;
+ }
 }
