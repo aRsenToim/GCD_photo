@@ -19,14 +19,18 @@ const Settings: FC = () => {
  return <div>
   <h1>Настройки аккаунта:</h1>
   <div style={{ margin: "10px 0px" }}>
-   <input type="text" value={status} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setStatus(e.currentTarget.value) }} />
-   <Button content='Изменить' isButton='regular' onclink={() => {
-    if (status && status.length < 50) {
-     dispatch(setStatusFetch(status, profile.id, profile))
-     dispatch(setIsWindow(true))
-     dispatch(setWindowTitle('Статус изменен'))
-    }
-   }} />
+   <div>
+    <input type="text" value={status} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setStatus(e.currentTarget.value) }} />
+    <Button content='Изменить' isButton='regular' onclink={() => {
+     if (status && status.length < 50) {
+      dispatch(setStatusFetch(status, profile.id, profile))
+      dispatch(setIsWindow(true))
+      dispatch(setWindowTitle('Статус изменен'))
+     }
+    }} />
+   </div>
+   <div>
+   </div>
   </div>
   <Button isButton='red' content='Выйти из аккаунта' onclink={() => {
    dispatch(logoutProfileFetch())

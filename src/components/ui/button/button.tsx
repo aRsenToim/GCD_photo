@@ -4,7 +4,7 @@ import s from './button.module.scss'
 
 interface IProps {
   content: string
-  isButton: string
+  isButton: 'red' | 'green' | 'blue' | 'regular' | '' 
   onclink: () => void
 }
 
