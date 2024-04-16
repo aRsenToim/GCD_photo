@@ -24,9 +24,9 @@ export const getPhotoFetch = (id: string) => {
  }
 }
 
-export const addCommentFetch = (id: number, comments: IComment[]) => {
+export const setCommentFetch = (id: number, comments: IComment[]) => {
  return async (dispatch: Dispatch<any>) => {
-  photosApi.addComment(id, comments).then((data) => {
+  photosApi.setComment(id, comments).then((data) => {
    dispatch(getPhotoFetch(`${id}`))
   }).catch((err: Error | AxiosError) => dispatch(setError(err.message)))
  }

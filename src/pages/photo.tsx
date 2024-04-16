@@ -3,7 +3,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { usePhoto } from '../hooks/usePhoto'
 import PhotoCard from '../components/photoCard/photoCard'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { addCommentFetch, deletePhotoFetch, likePhotoFetch, unLikePhotoFetch } from '../store/actions/photosAction'
+import { deletePhotoFetch, likePhotoFetch, setCommentFetch, unLikePhotoFetch } from '../store/actions/photosAction'
 import { addLikePhotoProfile, unLikePhotoProfile } from '../store/actions/profileAction'
 import { ILikesPhoto } from '../types/profileType'
 import { setIsFunAlertIsBoolean } from '../store/slices/pageSlice'
@@ -26,9 +26,8 @@ const Photo: FC = () => {
   })
 
   const deleteComment = (idComment: string) => {
-    const copyComments = photo?.comments
-
-    console.log(copyComments?.indexOf(copyComments?.find((comment: IComment) => comment.idComment == idComment) ?? {
+    const copyComments = JSON.parse(JSON.stringify(photo?.comments))
+    const index = copyComments?.indexOf(copyComments?.find((comment: IComment) => comment.idComment == idComment) ?? {
       idComment: '',
       idPhoto: 1,
       autor: {
@@ -36,8 +35,14 @@ const Photo: FC = () => {
         nickname: '',
         id: ''
       },
-      content: ''}))
+      content: ''
+    })
+
+    copyComments?.splice(index, 1)
+
+    dispatch(setCommentFetch(photo?.id ?? 0, copyComments ?? []))
   }
+
 
   if (isDelete) {
     return <Navigate to={'/'} />
@@ -46,20 +51,24 @@ const Photo: FC = () => {
 
   return <div>
     {profile !== null && photo ? <PhotoCard
+      isProfile={photo.autor.id == profile.id}
+      deleteComment={(idComment: string) => { deleteComment(idComment) }}
       profileAvatar={profile.img}
       commentInput={commentInput}
       setCommentInput={setCommentInput}
       addComment={() => {
-        dispatch(addCommentFetch(photo?.id, [...photo?.comments, {
-          idComment: `${generatorId()}`,
-          idPhoto: photo?.id,
-          autor: {
-            img: profile.img,
-            nickname: profile.nickname,
-            id: profile.id
-          },
-          content: commentInput
-        }]))
+        if (commentInput) {
+          dispatch(setCommentFetch(photo?.id, [...photo?.comments, {
+            idComment: `${generatorId()}`,
+            idPhoto: photo?.id,
+            autor: {
+              img: profile.img,
+              nickname: profile.nickname,
+              id: profile.id
+            },
+            content: commentInput
+          }]))
+        }
       }}
       comments={photo?.comments ?? []}
       deletePhoto={() => {

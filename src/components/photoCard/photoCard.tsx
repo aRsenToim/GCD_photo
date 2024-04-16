@@ -24,10 +24,12 @@ interface IProps {
  addComment: () => void
  commentInput: string
  setCommentInput: (value: string) => void
+ deleteComment: (idComment: string) => void
+ isProfile: boolean
 }
 
 
-const PhotoCard: FC<IProps> = ({ name, addComment, profileAvatar, commentInput, setCommentInput, comments, idUser, desc, image, deletePhoto, avatarAutor, nameAutor, idAutor, likes, addLike, unLike, isLiked }) => {
+const PhotoCard: FC<IProps> = ({ name,isProfile, addComment, profileAvatar, deleteComment, commentInput, setCommentInput, comments, idUser, desc, image, deletePhoto, avatarAutor, nameAutor, idAutor, likes, addLike, unLike, isLiked }) => {
  const [isUrl, setIsUrl] = useState<string>('')
  const [isOpenSetting, setIsOpenSetting] = useState<boolean>(false)
 
@@ -74,7 +76,7 @@ const PhotoCard: FC<IProps> = ({ name, addComment, profileAvatar, commentInput, 
     </button>}
    </div>
    <AddComment setCommentInput={setCommentInput} commentInput={commentInput} addComment={addComment} img={profileAvatar} />
-   <Comments comments={comments} />
+   <Comments isProfile={isProfile} deleteComment={(idComment: string) => {deleteComment(idComment)}} comments={comments} />
   </div>
  </div>
 }

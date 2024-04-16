@@ -27,7 +27,7 @@ export const photosApi = {
   const data = await $api.get(`photos?name_like=${search}`)
   return data
  },
- async addComment(id: number, comments: IComment[]) {
+ async setComment(id: number, comments: IComment[]) {
   const data = await $api.patch(`/photos/${id}`, { comments })
   return data.data
  }

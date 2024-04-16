@@ -2,10 +2,18 @@
  padding: 5px;
  border: 1px solid #ccc;
  margin-top: 10px;
+ position: relative;
  &__image {
   width: 50px;
   height: 50px;
   border-radius: 200px;
+ }
+
+ &__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
  }
 
  &__autor {
@@ -13,11 +21,29 @@
   align-items: flex-start;
  }
 
+ &__settings {
+ }
+
+ &__settingBlocks{
+  position: absolute;
+  right: 0px;
+  text-align: end;
+  background-color: #ccc;
+  padding: 1px 7px;
+  border-radius: 10px;
+ }
+ &__settingBlock{
+  list-style: none;
+  cursor: pointer;
+ }
+ &__button{
+  cursor: pointer;
+ }
  &__title {
   margin: 10px 10px;
  }
 
- &__content{
+ &__content {
   margin-top: 10px;
  }
 }
